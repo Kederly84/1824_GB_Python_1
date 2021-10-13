@@ -1,0 +1,63 @@
+1. Отключаем виртуальное окружение:
+(venv) aleksandrmaksimov@Air-Aleksandr PythonBasics % deactivate
+2. Проверяем список установленных пакетов:
+aleksandrmaksimov@Air-Aleksandr PythonBasics % pip3 freeze
+3. Устанавливаем пакет pillow
+aleksandrmaksimov@Air-Aleksandr PythonBasics % pip3 install pillow
+Collecting pillow
+  Downloading Pillow-8.3.2-cp39-cp39-macosx_10_10_x86_64.whl (3.0 MB)
+     |████████████████████████████████| 3.0 MB 1.4 MB/s
+Installing collected packages: pillow
+Successfully installed pillow-8.3.2
+WARNING: You are using pip version 21.2.3; however, version 21.3 is available.
+You should consider upgrading via the '/Library/Frameworks/Python.framework/Versions/3.9/bin/python3.9 -m pip install --upgrade pip' command.
+4.Проверка версии
+aleksandrmaksimov@Air-Aleksandr PythonBasics % pip3 freeze
+Pillow==8.3.2
+5. Удаляем Pillow
+aleksandrmaksimov@Air-Aleksandr PythonBasics % pip3 uninstall pillow
+Found existing installation: Pillow 8.3.2
+Uninstalling Pillow-8.3.2:
+  Would remove:
+    /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/PIL/*
+    /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Pillow-8.3.2.dist-info/*
+Proceed (Y/n)? y
+  Successfully uninstalled Pillow-8.3.2
+6. Проверяем все ли удалили:
+aleksandrmaksimov@Air-Aleksandr PythonBasics % pip3 freeze
+
+То же самое в виртуальном окружении:
+
+1. Активируем виртуальное окружение:
+aleksandrmaksimov@Air-Aleksandr PythonBasics % source venv/bin/activate
+2. Проверяем установленные пакеты:
+(venv) aleksandrmaksimov@Air-Aleksandr PythonBasics % pip3 freeze
+3. Устанавливаем reqests
+(venv) aleksandrmaksimov@Air-Aleksandr PythonBasics % pip3 install requests
+Collecting requests
+  Downloading requests-2.26.0-py2.py3-none-any.whl (62 kB)
+     |████████████████████████████████| 62 kB 915 kB/s
+Collecting certifi>=2017.4.17
+  Downloading certifi-2021.10.8-py2.py3-none-any.whl (149 kB)
+     |████████████████████████████████| 149 kB 2.2 MB/s
+Collecting urllib3<1.27,>=1.21.1
+  Downloading urllib3-1.26.7-py2.py3-none-any.whl (138 kB)
+     |████████████████████████████████| 138 kB 14.9 MB/s
+Collecting charset-normalizer~=2.0.0
+  Downloading charset_normalizer-2.0.7-py3-none-any.whl (38 kB)
+Collecting idna<4,>=2.5
+  Downloading idna-3.2-py3-none-any.whl (59 kB)
+     |████████████████████████████████| 59 kB 23.3 MB/s
+Installing collected packages: urllib3, idna, charset-normalizer, certifi, requests
+Successfully installed certifi-2021.10.8 charset-normalizer-2.0.7 idna-3.2 requests-2.26.0 urllib3-1.26.7
+WARNING: You are using pip version 21.1.2; however, version 21.2.4 is available.
+You should consider upgrading via the '/Users/aleksandrmaksimov/Studing/PythonBasics/venv/bin/python -m pip install --upgrade pip' command.
+4. Проверяем список установленных пакетов:
+(venv) aleksandrmaksimov@Air-Aleksandr PythonBasics % pip3 freeze
+certifi==2021.10.8
+charset-normalizer==2.0.7
+idna==3.2
+requests==2.26.0
+urllib3==1.26.7
+
+
