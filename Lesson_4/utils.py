@@ -6,6 +6,7 @@ def currency_rates(curr_name: str) -> str:
     и возвращает курс и дату"""
     url = 'http://www.cbr.ru/scripts/XML_daily.asp'
     currences ={}
+    curr_name = curr_name.upper()
     r = requests.get(url, timeout=2)
     content = r.text
     date_finder = content.find('Date')
