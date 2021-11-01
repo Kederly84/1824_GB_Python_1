@@ -63,16 +63,19 @@ class WorkCar(Car):
 
 # Создание дочернего класса
 class SportCar(Car):
-    color: str = 'фиолетовая'
-    name: str = 'Ока'
-    is_police: bool = False
+
+    def show_speed(self):
+        """Переопределение родительского метода"""
+        if 0 < self.speed <= 30:
+            print(f'Едем со скоростью {self.speed} км/ч')
+        elif self.speed > 30:
+            print(f'Притормози. Скрость {self.speed} км/ч')
+        else:
+            print(f'А никто и никуда не едет. Стоим мы.')
 
 
 # Создание дочернего класса
 class PoliceCar(Car):
-    color: str = 'белая'
-    name: str = 'УАЗ'
-    is_police: bool = True
 
     def show_speed(self):
         """Переопределение родительского метода"""
