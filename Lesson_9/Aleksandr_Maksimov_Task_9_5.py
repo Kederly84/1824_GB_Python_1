@@ -1,6 +1,12 @@
+from abc import ABC, abstractmethod
+
+
 # Создание родительского класса
-class Stationery:
-    title: str = 'Канцелярская принадлежность'
+class Stationery(ABC):
+    def __init__(self, title: str):
+        self.title = title
+
+    @abstractmethod
     def draw(self):
         """Метод отрисовки"""
         print(f'Запуск отрисовки')
@@ -28,12 +34,11 @@ class Handle(Stationery):
 
 
 # Создание экземпляров классов
-a = Stationery()
-b = Pen()
-c = Pencil()
-d = Handle()
+b = Pen('Pen')
+c = Pencil('Pencil')
+d = Handle('Handle')
 # Вызов методов классов
-a.draw()
+Stationery.draw('Stationery')
 b.draw()
 c.draw()
 d.draw()

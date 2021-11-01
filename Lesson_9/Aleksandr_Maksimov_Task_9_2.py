@@ -1,7 +1,6 @@
 # Создание класса
 class Road:
-    _lenght: int = 0
-    _width: int = 0
+
     # Определение необходимых атрибутов при создании экземпляра класса
     def __init__(self, lenght: int, widht: int):
         Road._lenght = lenght

@@ -4,63 +4,59 @@ import random
 
 # Создание родительского класса
 class Car:
-    speed: int = 0
-    color: str = 'red'
-    name: str = 'Запорожец'
-    is_police: bool = False
+
+    def __init__(self, color: str, name: str, is_police: bool):
+        self.speed = 0
+        self.color = color
+        self.name = name
+        self.is_police = is_police
 
     def go(self):
         """Метод для старта"""
-        Car.speed = random.randint(10, 100)
-        print(f'Машина едет со скоростью {Car.speed} км/ч')
+        self.speed = random.randint(10, 100)
+        print(f'Машина едет со скоростью {self.speed} км/ч')
 
     def stop(self):
         """Метод для остановки"""
-        Car.speed = 0
+        self.speed = 0
 
     def turn(self, direction: str):
         """Метод для поворота и проверки его возможности )))"""
-        if Car.speed > 30:
-            print(f'Убились мы на скорости {Car.speed} км/ч')
+        if self.speed > 30:
+            print(f'Убились мы на скорости {self.speed} км/ч')
         else:
             print(f'Машина повернула на {direction}')
 
     def show_speed(self):
         """Спидометр"""
-        if Car.speed == 0:
+        if self.speed == 0:
             print(f'А никто и никуда не едет. Стоим мы.')
         else:
-            print(f'Скорость автомобиля {Car.speed} км/ч')
+            print(f'Скорость автомобиля {self.speed} км/ч')
 
 
 # Создание дочернего класса
 class TownCar(Car):
-    color: str = 'зеленая'
-    name: str = 'Жигули'
-    is_police: bool = False
 
     def show_speed(self):
         """Переопределение родительского метода"""
-        if 0 < TownCar.speed <= 60:
-            print(f'Едем со скоростью {TownCar.speed} км/ч')
-        elif TownCar.speed > 60:
-            print(f'Притормози. Скрость {TownCar.speed} км/ч')
+        if 0 < self.speed <= 60:
+            print(f'Едем со скоростью {self.speed} км/ч')
+        elif self.speed > 60:
+            print(f'Притормози. Скрость {self.speed} км/ч')
         else:
             print(f'А никто и никуда не едет. Стоим мы.')
 
 
 # Создание дочернего класса
 class WorkCar(Car):
-    color: str = 'Синяя'
-    name: str = 'Газель'
-    is_police: bool = False
 
     def show_speed(self):
         """Переопределение родительского метода"""
-        if 0 < WorkCar.speed <= 30:
-            print(f'Едем со скоростью {WorkCar.speed} км/ч')
-        elif WorkCar.speed > 30:
-            print(f'Притормози. Скрость {WorkCar.speed} км/ч')
+        if 0 < self.speed <= 30:
+            print(f'Едем со скоростью {self.speed} км/ч')
+        elif self.speed > 30:
+            print(f'Притормози. Скрость {self.speed} км/ч')
         else:
             print(f'А никто и никуда не едет. Стоим мы.')
 
@@ -83,23 +79,25 @@ class PoliceCar(Car):
         print(f'Мы с мигалками! Скорость не важна!')
 
 # Создание экземпляров классов и вызов методов
-a = Car()
+a = Car('зеленый', 'Жигули', False)
 a.go()
+a.show_speed()
 a.turn('right')
 
-b = TownCar()
+b = TownCar('желтый', 'Ока', False)
+b.stop()
 b.go()
 b.show_speed()
 
-c = WorkCar()
+c = WorkCar('белый', 'Газель', False)
 c.go()
 c.show_speed()
 
-d = SportCar()
+d = SportCar('красный', 'Волга', False)
 d.go()
 d.stop()
 d.show_speed()
 
-e = PoliceCar()
+e = PoliceCar('бело-синяя', 'УАЗ', True)
 e.go()
 e.show_speed()
