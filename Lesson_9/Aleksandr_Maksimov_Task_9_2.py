@@ -3,13 +3,13 @@ class Road:
 
     # Определение необходимых атрибутов при создании экземпляра класса
     def __init__(self, lenght: int, widht: int):
-        Road._lenght = lenght
-        Road._width = widht
+        self._lenght = lenght
+        self._width = widht
 
     def mass(self, coating_thickness: int):
         """Метод для расчета массы асфальта"""
         mass_of_layer = 25
-        total_mass = int((Road._width * Road._lenght * mass_of_layer * coating_thickness) / 1000)
+        total_mass = int((self._width * self._lenght * mass_of_layer * coating_thickness) / 1000)
         return total_mass
 
 # Создание экземпляра класса
